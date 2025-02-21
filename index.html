@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Car Clicker</h1>
+    <p>Кликайте на машину, чтобы заработать очки!</p>
+    <div class="car-container">
+      <img id="car" src="images/level-1.png" alt="Car">
+    </div>
+    <div class="stats">
+      <p>Очки: <span id="score">0</span></p>
+      <p>Уровень: <span id="level">1</span></p>
+    </div>
+    <div class="upgrades">
+      <button id="upgrade-speed">Улучшить скорость (50 очков)</button>
+      <button id="upgrade-power">Улучшить мощность (100 очков)</button>
+      <button id="upgrade-auto-clicker">Купить автокликер (200 очков)</button>
+      <button id="upgrade-click-multiplier">Улучшить скорость клика (100 очков)</button>
+      <button id="reset-progress">Сбросить прогресс</button>
+    </div>
+    <div class="achievements">
+      <h2>Достижения</h2>
+      <ul id="achievements-list"></ul>
+    </div>
+  </div>
+  <audio id="click-sound" src="sounds/click.mp3"></audio>
+  <audio id="upgrade-sound" src="sounds/upgrade.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

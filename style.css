@@ -1,0 +1,242 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #333;
+  }
+  
+  /* Контейнер */
+  .container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Заголовок */
+  h1 {
+    font-size: 2.5rem;
+    color: #2575fc;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Контейнер для машины */
+  .car-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Изображение машины */
+  #car {
+    width: 350px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  #car:hover {
+    transform: scale(1.05);
+  }
+  
+  #car:active {
+    transform: scale(0.95);
+  }
+  
+  /* Статистика */
+  .stats {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .stats p {
+    margin: 10px 0;
+  }
+  
+  /* Кнопки улучшений */
+  .upgrades {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .upgrades button {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2575fc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .upgrades button:hover {
+    background-color: #1a5bbf;
+    transform: translateY(-2px);
+  }
+  
+  .upgrades button:active {
+    transform: translateY(0);
+  }
+  
+  .upgrades button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Достижения */
+  .achievements {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .achievements h2 {
+    font-size: 1.5rem;
+    color: #2575fc;
+    margin-bottom: 15px;
+  }
+  
+  #achievements-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #achievements-list li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  /* Анимации */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Кнопка сброса прогресса */
+  #reset-progress {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #reset-progress:hover {
+    background-color: #e60000;
+    transform: translateY(-2px);
+  }
+  
+  #reset-progress:active {
+    transform: translateY(0);
+  }
+  /* Анимация всплывающего текста */
+@keyframes popUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Анимация пульсации кнопки */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Класс для анимации всплывающего текста */
+  .upgrade-popup {
+    position: absolute;
+    font-size: 1.2rem;
+    color: #2575fc;
+    font-weight: bold;
+    animation: popUp 1s ease-in-out;
+  }
+  
+  /* Класс для анимации пульсации кнопки */
+  .pulse-animation {
+    animation: pulse 0.5s ease-in-out;
+  }
+
+ /* Анимация для нажатия машины с тенью и масштабированием */
+@keyframes press {
+    0% {
+      transform: translateY(0) scale(1);
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    }
+    50% {
+      transform: translateY(5px) scale(0.95); /* Машина сдвигается вниз и уменьшается */
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    }
+  }
+  
+  /* Применяем анимацию при клике */
+  #car:active {
+    animation: press 0.2s ease-in-out;
+  }
